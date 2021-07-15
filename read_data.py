@@ -1,3 +1,11 @@
+"""
+Read data:read data from different txt files, then write them into one
+@aurthor Jiancheng Zeng
+@April 30 2021
+
+"""
+
+
 import csv
 import matplotlib.pyplot as plt
 import numpy as np

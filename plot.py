@@ -1,3 +1,10 @@
+"""
+Plot data: plot data that just been read
+@aurthor Jiancheng Zeng
+@April 30 2021
+
+"""
+
 import numpy as np
 import matplotlib.pyplot as plt
 import statistics
