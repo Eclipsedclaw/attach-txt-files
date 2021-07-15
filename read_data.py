@@ -7,7 +7,7 @@ from numpy import array
 Select all the directories that contains data files
 ----------------------
 """
-filenames = ["/users/jiancheng/gaps/d20210507/h20210507_1000.dat","/users/jiancheng/gaps/d20210507/h20210507_1100.dat","/users/jiancheng/gaps/d20210507/h20210507_1200.dat","/users/jiancheng/gaps/d20210507/h20210507_1300.dat","/users/jiancheng/gaps/d20210507/h20210507_1400.dat","/users/jiancheng/gaps/d20210507/h20210507_1500.dat"]
+filenames = ["../attach-txt-files/data/d20210707/h20210707_1100.dat","../attach-txt-files/data/d20210707/h20210707_1200.dat","../attach-txt-files/data/d20210707/h20210707_1300.dat"]
 
 """
 Read temperature data and combine them in one list, then save it to one txt file
@@ -16,7 +16,7 @@ Read temperature data and combine them in one list, then save it to one txt file
 data = []
 for file in filenames:
     data.extend(array(np.genfromtxt(file, skip_header=1, skip_footer=0, names=None, dtype=float, usecols = list(range(25,64)), delimiter=',')))
-np.savetxt("read_data_20210507.txt", data, delimiter = " , ", fmt='%1.4g')
+np.savetxt("../attach-txt-files/output/test_read_data.txt", data, delimiter = " , ", fmt='%1.4g')
 #print(type(data))  #check data type
 print("finish reading data!")
 
@@ -31,5 +31,5 @@ for file in filenames:
     #data = data.extend(data_list)
 
 #print(type(T)) #check time data type
-np.savetxt("read_time_20210507.txt", T, delimiter = "\n", fmt = "%s")
+np.savetxt("../attach-txt-files/output/test_read_time.txt", T, delimiter = "\n", fmt = "%s")
 print("finish reading time!")
