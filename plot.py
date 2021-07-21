@@ -9,15 +9,16 @@ import numpy as np
 import matplotlib.pyplot as plt
 import statistics
 from numpy import array
+from matplotlib.font_manager import FontProperties
 
 """
 Select which RTDs to plot and name them
 ---------------------
 """
-RTDn = [1, 12, 13, 14, 15, 21, 27, 28, 29, 30, 40, 42, 43, 44] #single channel plot
+RTDn = [1, 13, 14, 15, 6, 28, 29, 30, 40, 42, 44, 43] #single channel plot
 #RTDn = list(range(1,48))  #plot RTD numbers
 #RTDt = ["reservoir", "L1 Buttom", "L1 Middle", "L1 Top", "L6 Buttom", "L6 Middle", "L6 Top", "L12 Buttom", "L12 Middle", "L12 Top"]
-RTDt = ["reservoir","Radiator", "Radiator", "Radiator", "Radiator", "Loop1 top position tube temperature", "Radiator", "Radiator", "Radiator", "Radiator",  "coupler temperature","Al frame middle temperature", "Al frame far end temperature", "Al frame close end temperature"]
+RTDt = ["reservoir","Radiator", "Radiator", "Radiator", "Loop6 bottom position tube temperature", "Radiator", "Radiator", "Radiator",  "coupler temperature","Al frame close end temperature", "Al frame middle end temperature", "Al frame far end temperature"]
 STDEV = []  #standard deviation
 n=0
 #C = ['black', 'springgreen', 'forestgreen', 'darkgreen', 'lightcoral', 'indianred', 'brown', 'royalblue', 'blue', 'navy']  #customize plot color
@@ -27,13 +28,13 @@ n=0
 Read data from total data file
 --------------------
 """
-data = np.genfromtxt("/Users/jiancheng/CloudDocuments/Documents/GitHub/attach-txt-files/output/read_data_20210716.txt", skip_footer=0, skip_header=0, names=None, delimiter = " , ")    #get temperature data
-T = np.genfromtxt("/Users/jiancheng/CloudDocuments/Documents/GitHub/attach-txt-files/output/read_time_20210716.txt", skip_footer=0, skip_header=0, names=None, delimiter = "\n")    #get time data
+data = np.genfromtxt("/Users/jiancheng/CloudDocuments/Documents/GitHub/attach-txt-files/output/read_data_20210720.txt", skip_footer=0, skip_header=0, names=None, delimiter = " , ")    #get temperature data
+T = np.genfromtxt("/Users/jiancheng/CloudDocuments/Documents/GitHub/attach-txt-files/output/read_time_20210720.txt", skip_footer=0, skip_header=0, names=None, delimiter = "\n")    #get time data
 
 
 End = len(data[:,0])    #identify end time
-StartTime = 0  #choose start time
-EndTime = End  #choose end time
+StartTime = 6390  #choose start time
+EndTime = 30390  #choose end time
 #print(EndTime)
 
 """
@@ -57,6 +58,6 @@ plt.ylabel('temperature/$^\circ C$')
 #plt.ylim([-60, -20])
 plt.title('LN2 run test')
 plt.grid(color='k', linestyle='--', linewidth=.1)
-plt.legend()
+plt.legend(loc='lower left')
 #plt.annotate("start reservoir heater", [0,0])
 plt.show()
