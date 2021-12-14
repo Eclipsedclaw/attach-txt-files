@@ -1,0 +1,87 @@
+/tracking/verbose 0
+
+# Use this open statement to create a .wrl file suitable for
+# viewing in a VRML viewer:
+/vis/open VRML2FILE
+
+# Disable auto refresh and quieten vis messages whilst scene and
+# trajectories are established:
+/vis/viewer/set/autoRefresh false
+/vis/verbose errors
+
+# Draw geometry:
+/vis/drawVolume
+#tof part
+
+#upper
+/SimpleDet/det/GapsTofPannel 0 0 1271.6 100000000
+#lower
+/SimpleDet/det/GapsTofPannel 0 0 306.4  110000000
+
+#tracker part
+
+/SimpleDet/run/NumTrackerRows 2
+
+/SimpleDet/det/GapsDetectorLayer 0 0 0 -10 201000000 0
+/SimpleDet/det/GapsDetectorLayer 0 0 0 -20 202000000 0
+/SimpleDet/det/GapsDetectorLayer 0 0 0 -30 200000000 0
+
+#Passive material surrounding the tracker system
+
+                                         #dX    #dy  #dz        #X    #Y      #Z
+               
+#Additional top layer of pink foam                                         
+/SimpleDet/det/passiveBox 	Ethafoam 48.26  160  7.62          0       0     -4.95    300000002 #additional top layer of pink foam        ##OK##                     
+                       
+#Encapsulating layer of blue foam                  
+/SimpleDet/det/passiveBox 	Ethafoam 53.34  170.16  5.08      -2.54       0      1.47    300000001 #top layer of blue foam                   ##OK##
+/SimpleDet/det/passiveBox 	Ethafoam 53.34  160  5.08         -2.54       0     -42.4    300000007 #bottom layer of blue foam                ##OK## 
+/SimpleDet/det/passiveBox 	Ethafoam 5.08   160  38.72           -26.67   0     -20.4391 300000003 #left layer of blue foam                  ##OK##
+/SimpleDet/det/passiveBox 	Ethafoam 5.08   170.16  48.88         26.67   0     -20.4391 300000004 #right layer of foam                      ##OK##
+/SimpleDet/det/passiveBox 	Ethafoam 53.18  5    43.8         -2.54       82.6  -23.04   300000005 #front layer of foam                      ##OK##
+/SimpleDet/det/passiveBox 	Ethafoam 53.18  5    43.8         -2.54      -82.6  -23.04   300000006 #behind layer of foam                     ##OK##
+
+##Two bottom layer of blue foam
+/SimpleDet/det/passiveBox 	Ethafoam 178.42  220.16  5.08      0       0     -47.48   300000008 #first bottom layer of blue foam replacing TOF        ##OK## 
+/SimpleDet/det/passiveBox 	Ethafoam 178.42  220.16  5.08      0       0     -52.56   300000009 #second bottom layer of blue foam replacing TOF       ##OK## 
+
+#Covering large blue box, with height given 8 October, but is too high, in this way the distances between the inner tof and first tracker plane has to be more than 25 cm
+#/SimpleDet/det/passiveBox 	Ethafoam 5.08   203.2  60.198     -31.77   0      -14.741  300000010 #backside of the large bule box          ##OK## 
+#/SimpleDet/det/passiveBox 	Ethafoam 118.11 5.08   60.198      24.745 -104.24 -14.741  300000011 #right of the large bule box             ##OK## 
+#/SimpleDet/det/passiveBox 	Ethafoam 118.11 5.08   60.198      24.745  104.24 -14.741  300000012 #left of the large bule box              ##OK## 
+#/SimpleDet/det/passiveBox 	Ethafoam 118.11 203.2  5.08        29.825  0       12.818  300000013 #top of the large bule box               ##OK## 
+
+#blue foams in between foamboxes
+/SimpleDet/det/passiveBox       Ethafoam 58.26  5    48.88          -5.08      -87.28  -20.54   300000014 #behind layer of foam                      ##OK##
+/SimpleDet/det/passiveBox       Ethafoam 58.26  5    48.88          -5.08      -92.36  -20.54   300000015 #behind layer of foam                     ##OK##
+/SimpleDet/det/passiveBox       Ethafoam 58.26  5    48.88          -5.08       87.28  -20.54   300000016 #front layer of foam                      ##OK##
+/SimpleDet/det/passiveBox       Ethafoam 58.26  5    48.88          -5.08       92.36  -20.54   300000017 #front layer of foam                     ##OK##
+
+#Covering large blue box reduced height
+/SimpleDet/det/passiveBox 	Ethafoam 5.08   193.04  53.94      -31.77   0      -17.87  300000010 #backside of the large bule box          ##OK## 
+/SimpleDet/det/passiveBox 	Ethafoam 118.11 5.08   53.94       24.745 -99.16 -17.87  300000011 #right of the large bule box             ##OK## 
+/SimpleDet/det/passiveBox 	Ethafoam 118.11 5.08   53.94       24.745  99.16 -17.87  300000012 #left of the large bule box              ##OK## 
+/SimpleDet/det/passiveBox 	Ethafoam 118.11 193.04  5.08        29.825  0       6.56   300000013 #top of the large bule box               ##OK## 
+
+#cables
+/SimpleDet/det/passiveBox       TOFcable 180 	1	1	0	-45	33.7	300000018 #Lower panel left cable
+/SimpleDet/det/passiveBox       TOFcable 180    1       1       0       45     33.7    300000019 #Lower panel right cable
+/SimpleDet/det/passiveBox       TOFcable 180    1       1       0       -45     130.2    300000020 #Higher panel left cable
+/SimpleDet/det/passiveBox       TOFcable 180    1       1       0       45     130.2    300000021 #Higher panel right cable
+
+#/SimpleDet/det/CheckOverlap
+
+# use digitizer at simulation time
+/SimpleDet/det/UseDigitizer
+
+/SimpleDet/det/initialize
+
+# set uniform velocity distribution within two limits
+/SimpleDet/gun/uniformBetaOn 0.8 1
+
+# use isotropic starting position on a cube centered on 0, first parameter sets half the length of the cube, second parameter defines direction (0=all, 1=upgoing, -1=downgoing)
+/SimpleDet/gun/isotropicOn 100 -1
+
+/SimpleDet/run/setFileName muon_gfp
+/gps/particle mu-
+/run/beamOn 1
