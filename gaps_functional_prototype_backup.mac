@@ -14,61 +14,83 @@
 #tof part, scale in mm
 
 #upper
-/SimpleDet/det/GapsTofPannel 0 0 1433.3 100000000
+/SimpleDet/det/GapsTofPannel 340 0 2195.6 100000000
 #lower
-/SimpleDet/det/GapsTofPannel 0 0 734.8  110000000
+/SimpleDet/det/GapsTofPannel 340 0 1235.6  110000000
+
+##TOF platform
+/SimpleDet/det/passiveBox	Steel 4    244    4    -58    0    117.56    300000026 #horizontal inner lower bar
+/SimpleDet/det/passiveBox	Steel 4    244    4    -58    0    213.56    300000027 #horizontal inner higher bar
+/SimpleDet/det/passiveBox	Steel 4    244    4    126    0    117.56    300000028 #horizontal outer lower bar
+/SimpleDet/det/passiveBox	Steel 4    244    4    126    0    213.56    300000029 #horizontal outer higher bar
+/SimpleDet/det/passiveBox	Steel 4    244    4    -50    0    246    300000040 #horizontal inner top bar
+/SimpleDet/det/passiveBox	Steel 4    244    4    118    0    246    300000041 #horizontal outer top bar
+
+/SimpleDet/det/passiveBox	Steel 200    4    4    34    -124    2    300000034 #horizontal front bottom bar
+/SimpleDet/det/passiveBox	Steel 200    4    4    34    -124    160    300000035 #horizontal front middle bar
+/SimpleDet/det/passiveBox	Steel 200    4    4    34    -116    242    300000036 #horizontal front top bar
+/SimpleDet/det/passiveBox	Steel 200    4    4    34    124    2    300000037 #horizontal back bottom bar
+/SimpleDet/det/passiveBox	Steel 200    4    4    34    124    160    300000038 #horizontal back middle bar
+/SimpleDet/det/passiveBox	Steel 200    4    4    34    116    242    300000039 #horizontal back top bar
+
+/SimpleDet/det/passiveBox	Steel 4    4    244    -62    120    122    300000030 #vertical back left bar
+/SimpleDet/det/passiveBox	Steel 4    4    244    -62    -120    122    300000031 #vertical front left bar
+/SimpleDet/det/passiveBox	Steel 4    4    244    130    120    122    300000032 #vertical back right bar
+/SimpleDet/det/passiveBox	Steel 4    4    244    130    -120    122    300000033 #vertical front right bar
 
 #tracker part, scale in cm
 
 /SimpleDet/run/NumTrackerRows 2
 
-/SimpleDet/det/GapsDetectorLayer 0 0 0 40.16 201000000 0
-/SimpleDet/det/GapsDetectorLayer 0 0 0 30.16 202000000 0
-/SimpleDet/det/GapsDetectorLayer 0 0 0 20.16 200000000 0
+/SimpleDet/det/GapsDetectorLayer 0 0 0 85.24 201000000 0
+/SimpleDet/det/GapsDetectorLayer 0 0 0 75.24 202000000 0
+/SimpleDet/det/GapsDetectorLayer 0 0 0 65.24 200000000 0
 
 #Passive material surrounding the tracker system
 
                                          #dX    #dy  #dz        #X    #Y      #Z
                
 #Additional top layer of pink foam                                         
-/SimpleDet/det/passiveBox 	Ethafoam 48.1  160  6.5          0       0     44.81    300000002 #additional top layer of pink foam        ##OK##                     
+/SimpleDet/det/passiveBox 	Ethafoam 48.1  160  6.5          0       0     89.9    300000002 #additional top layer of pink foam        ##OK##                     
                        
 #Encapsulating layer of blue foam                  
-/SimpleDet/det/passiveBox 	Ethafoam 53.34  170.16  5.08      2.54       0      50.7    300000001 #top layer of blue foam                   ##OK##
-#/SimpleDet/det/passiveBox 	Ethafoam 53.34  160  5.08         -2.54       0     -47.5    300000007 #bottom layer of blue foam                ##OK## 
-/SimpleDet/det/passiveBox 	Ethafoam 5.08   190.32  38           -26.67   0     29.16 300000003 #inner layer of blue foam                  ##OK##
-/SimpleDet/det/passiveBox 	Ethafoam 5.08   170.16  38         26.77   0     29.16 300000004 #outer layer of foam                      ##OK##
-/SimpleDet/det/passiveBox 	Ethafoam 48.1  5    38         0.04       83.08  29.16   300000005 #front side layer of foam                      ##OK##
-/SimpleDet/det/passiveBox 	Ethafoam 48.1  5    38         0.04      -83.08  29.16   300000006 #back layer of foam                     ##OK##
+/SimpleDet/det/passiveBox 	Ethafoam 53.34  170.16  5.08      2.54       0      95.78    300000001 #top layer of blue foam                   ##OK##
+/SimpleDet/det/passiveBox 	Ethafoam 5.08   190.32  38           -26.67   0     74.24 300000003 #inner layer of blue foam                  ##OK##
+/SimpleDet/det/passiveBox 	Ethafoam 5.08   170.16  38         26.77   0     74.24 300000004 #outer layer of foam                      ##OK##
+/SimpleDet/det/passiveBox 	Ethafoam 48.1  5    38         0.04       83.08  74.24   300000005 #front side layer of foam                      ##OK##
+/SimpleDet/det/passiveBox 	Ethafoam 48.1  5    38         0.04      -83.08  74.24   300000006 #back layer of foam                     ##OK##
 
-##Two bottom layer of blue foam
-/SimpleDet/det/passiveBox 	Ethafoam 178.42  191.52  5.08      0       0     7.62   300000008 #first bottom layer of blue foam replacing TOF        ##OK## 
-/SimpleDet/det/passiveBox 	Ethafoam 178.42  191.52  5.08      0       0     2.54   300000009 #second bottom layer of blue foam replacing TOF       ##OK## 
+##Three bottom layer of blue foam
+/SimpleDet/det/passiveBox 	Ethafoam 178.42  191.52  5.08      -55       0     47.62   300000008 #first bottom layer of blue foam replacing TOF        ##OK## 
+/SimpleDet/det/passiveBox 	Ethafoam 178.42  191.52  5.08      -55       0     42.54   300000009 #second bottom layer of blue foam replacing TOF       ##OK## 
+/SimpleDet/det/passiveBox	Ethafoam 63.34   190.32  5.08      2.58      0     52.7   300000025 #third bottom layer of blue foam directly hold tracker
 
-#Covering large blue box, with height given 8 October, but is too high, in this way the distances between the inner tof and first tracker plane has to be more than 25 cm
-#/SimpleDet/det/passiveBox 	Ethafoam 5.08   203.2  60.198     -31.77   0      -14.741  300000010 #backside of the large bule box          ##OK## 
-#/SimpleDet/det/passiveBox 	Ethafoam 118.11 5.08   60.198      24.745 -104.24 -14.741  300000011 #right of the large bule box             ##OK## 
-#/SimpleDet/det/passiveBox 	Ethafoam 118.11 5.08   60.198      24.745  104.24 -14.741  300000012 #left of the large bule box              ##OK## 
-#/SimpleDet/det/passiveBox 	Ethafoam 118.11 203.2  5.08        29.825  0       12.818  300000013 #top of the large bule box               ##OK## 
+
+##foams in between tracker and radiator
+/SimpleDet/det/passiveBox	Ethafoam 92    190.32  43.08 	-75.21 	  0    71.7    300000023 #multiple layers in between
+/SimpleDet/det/passiveBox	Ethafoam 97.08 	  190.32   5.08    -72.67    0    95.78    300000024 #extra top layer in between
 
 #blue foams in between foamboxes
-/SimpleDet/det/passiveBox       Ethafoam 53.18  5.08    43.08          2.58      -88.16  31.7   300000014 #back layer of foam                      ##OK##
-/SimpleDet/det/passiveBox       Ethafoam 53.18  5.08    43.08          2.58      -93.24  31.7   300000015 #back layer of foam                     ##OK##
-/SimpleDet/det/passiveBox       Ethafoam 53.18  5.08    43.08          2.58       88.16  31.7   300000016 #front layer of foam                      ##OK##
-/SimpleDet/det/passiveBox       Ethafoam 53.18  5.08    43.08          2.58       93.24  31.7   300000017 #front layer of foam                     ##OK##
+/SimpleDet/det/passiveBox       Ethafoam 53.18  5.08    43.08          2.58      -88.16  76.78   300000014 #back layer of foam                      ##OK##
+/SimpleDet/det/passiveBox       Ethafoam 53.18  5.08    43.08          2.58      -93.24  76.78   300000015 #back layer of foam                     ##OK##
+/SimpleDet/det/passiveBox       Ethafoam 53.18  5.08    43.08          2.58       88.16  76.78   300000016 #front layer of foam                      ##OK##
+/SimpleDet/det/passiveBox       Ethafoam 53.18  5.08    43.08          2.58       93.24  76.78   300000017 #front layer of foam                     ##OK##
 
 #Covering large blue box reduced height
-/SimpleDet/det/passiveBox 	Ethafoam 5.08   191.56  43.08      31.85   0      31.7  300000010 #outer side of the large bule box          ##OK## 
-/SimpleDet/det/passiveBox 	Ethafoam 118.11 5.08   53.24       -24.705 -98.32 26.62  300000011 #back side of the large bule box             ##OK## 
-/SimpleDet/det/passiveBox 	Ethafoam 118.11 5.08   53.24       -24.705  98.32 26.62  300000012 #front side of the large bule box              ##OK## 
-/SimpleDet/det/passiveBox 	Ethafoam 118.11 200.48  5.08        -24.705  0       55.78   300000013 #top of the large bule box               ##OK## 
-/SimpleDet/det/passiveBox	Ethafoam 118.11 200.48 10.16	-24.705	0	63.4	300000022 #additional top
+/SimpleDet/det/passiveBox 	Ethafoam 5.08   191.56  43.08      31.85   0      76.78  300000010 #outer side of the large bule box          ##OK## 
+/SimpleDet/det/passiveBox 	Ethafoam 118.11 5.08   53.24       -24.705 -98.32 71.7  300000011 #back side of the large bule box             ##OK## 
+/SimpleDet/det/passiveBox 	Ethafoam 118.11 5.08   53.24       -24.705  98.32 71.7  300000012 #front side of the large bule box              ##OK## 
+/SimpleDet/det/passiveBox 	Ethafoam 118.11 200.48  5.08        -24.705  0       100.86   300000013 #top of the large bule box               ##OK## 
+/SimpleDet/det/passiveBox	Ethafoam 118.11 200.48 10.16	-24.705	0	108.48	300000022 #additional top
 
 #cables
-/SimpleDet/det/passiveBox       TOFcable 180 	1	1	0	-45	75.68	300000018 #Lower panel left cable
-/SimpleDet/det/passiveBox       TOFcable 180    1       1       0       45     75.68    300000019 #Lower panel right cable
-/SimpleDet/det/passiveBox       TOFcable 180    1       1       0       -45     145.82    300000020 #Higher panel left cable
-/SimpleDet/det/passiveBox       TOFcable 180    1       1       0       45     145.82    300000021 #Higher panel right cable
+/SimpleDet/det/passiveBox       TOFcable 180 	1	1	34	-45	125.72	300000018 #Lower panel left cable
+/SimpleDet/det/passiveBox       TOFcable 180    1       1       34       45     125.72    300000019 #Lower panel right cable
+/SimpleDet/det/passiveBox       TOFcable 180    1       1       34       -45     221.6    300000020 #Higher panel left cable
+/SimpleDet/det/passiveBox       TOFcable 180    1       1       34       45     221.6    300000021 #Higher panel right cable
+
+#Ground
+/SimpleDet/det/passiveBox	Quartz	400    400    0.02    0    0    -0.01    300000000 #reference ground
 
 /SimpleDet/det/CheckOverlap
 
