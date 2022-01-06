@@ -19,10 +19,10 @@
 /SimpleDet/det/GapsTofPannel 340 0 1235.6  110000000
 
 #cables, scale in cm
-/SimpleDet/det/passiveBox       TOFcable 180    1       1       34      -45     125.72  300010001 #Lower panel left cable
-/SimpleDet/det/passiveBox       TOFcable 180    1       1       34       45     125.72    300010002 #Lower panel right cable
-/SimpleDet/det/passiveBox       TOFcable 180    1       1       34       -45     221.6    300010003 #Higher panel left cable
-/SimpleDet/det/passiveBox       TOFcable 180    1       1       34       45     221.6    300010004 #Higher panel right cable
+/SimpleDet/det/passiveBox       TOFcable 180    1       1       34      -55     125.72  300010001 #Lower panel left cable
+/SimpleDet/det/passiveBox       TOFcable 180    1       1       34       55     125.72    300010002 #Lower panel right cable
+/SimpleDet/det/passiveBox       TOFcable 180    1       1       34       -55     221.6    300010003 #Higher panel left cable
+/SimpleDet/det/passiveBox       TOFcable 180    1       1       34       55     221.6    300010004 #Higher panel right cable
 
 ##TOF platform bars on y axis, scale in cm
 /SimpleDet/det/passiveBox	Steel 4    244    4    -58    0    117.56    300010005 #horizontal inner lower bar
@@ -45,6 +45,14 @@
 /SimpleDet/det/passiveBox	Steel 4    4    244    -62    -120    122    300010018 #vertical front left bar
 /SimpleDet/det/passiveBox	Steel 4    4    244    130    120    122    300010019 #vertical back right bar
 /SimpleDet/det/passiveBox	Steel 4    4    244    130    -120    122    300010020 #vertical front right bar
+
+##TOF readout electronics box
+/SimpleDet/det/passiveBox	Aluminum 12    36    21    134    -37    111.5    300010021 #readout electronic box 1, on lower front
+/SimpleDet/det/passiveBox	Aluminum 12    36    21    134    9.5    111.5    300010022 #readout electronic box 2, on lower middle
+/SimpleDet/det/passiveBox	Aluminum 12    36    21    134    82.5    111.5    300010023 #readout electronic box 3, on lower back
+/SimpleDet/det/passiveBox	Aluminum 12    36    21    134    -37    207.5    300010024 #readout electronic box 4, on higher front
+/SimpleDet/det/passiveBox	Aluminum 12    36    21    134    9.5    207.5    300010025 #readout electronic box 5, on higher middle
+/SimpleDet/det/passiveBox	Aluminum 12    36    21    134    82.5    207.5    300010026 #readout electronic box 6, on higher back
 
 #tracker part, scale in cm
 
